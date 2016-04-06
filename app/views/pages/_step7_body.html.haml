@@ -1,9 +1,9 @@
 = render 'navigation', step: 7
 
 %h2.number 질문 7.
-%h2 귀하의 정치적 이념성향은 어떻게 되십니까?
+%h2 귀하는 우리나라 역대 대통령 중 누구를 가장 좋아하십니까?
 
 = form_tag 'result', remote: true do
-  = hidden_field_tag :step, 6
-  = render 'question', question: :political_view
+  = render 'question', question: :present
   = submit_tag '다음으로 >', class: 'btn-next btn-block'
+

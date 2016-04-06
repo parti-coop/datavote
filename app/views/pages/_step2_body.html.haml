@@ -1,10 +1,9 @@
 = render 'navigation', step: 2
 
 %h2.number 질문 2.
-%h2 귀하는 우리나라 역대 대통령 중 누구를 가장 좋아하십니까?
+%h2 귀하의 연령은 어떻게 되십니까?
 
 = form_tag 'next_step', remote: true do
   = hidden_field_tag :step, 3
-  = render 'question', question: :present
+  = render 'question', question: :age
   = submit_tag '다음으로 >', class: 'btn-next btn-block'
-

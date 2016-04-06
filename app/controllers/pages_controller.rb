@@ -2,12 +2,12 @@ class PagesController < ApplicationController
   before_action :items
 
   ITEMS = {
-    present: {1 => '이승만', 2 => '박정희', 3 => '김대중', 4 => '노무현', 5 => '이명박', 6 => '기타', 7 => '잘모름'},
-    north_korea: {1 => '대북지원 필요', 2 => '대북지원 불가', 3 => '잘모름'},
-    news_paper: {1 => '보수성향언론사', 2 => '진보성향언론사', 3 => '상황따라', 4 => '잘모름'},
-    party: {1 => '지난선거 투표한 정당', 2 => '지지정당결정/후보결정', 3 => '지지정당미결정/후보결정', 4 => '그때봐서', 5 => '잘모름'},
+    present: {1 => '이승만', 2 => '박정희', 3 => '김대중', 4 => '노무현', 5 => '이명박', 7 => '잘 모름'},
+    north_korea: {1 => '민간차원의 인도적 지원은 필요', 2 => '북한의 태도변화가 없으면 지원불가', 3 => '잘 모름'},
+    news_paper: {1 => '조선일보', 2 => '한겨레신문', 3 => '중앙일보', 4 => '경향신문', 5 => '동아일보', 6 => '상황에 따라 다름', 7 => '잘 모름'},
+    party: {1 => ' 예전에 지지했던 정당을 지지할 것 같다.', 2 => '예전에 지지했던 정당을 지지하지만, 후보는 보고 결정할 것 같다.', 3 => '지지하는 정당도 없고, 후보도 보고 결정하겠다.', 4 => '선거막판까지 가 봐야 알 것 같다.', 5 => '잘 모름'},
     age: {1 => '10대', 2 => '20대', 3 => '30대', 4 => '40대', 5 => '50대', 6 => '60대이상'},
-    political_view: {1 => '적극진보', 2 => '약간진보', 3 => '중도', 4 => '약간보수', 5 => '적극보수'}
+    political_view: {1 => '매우 진보성향', 2 => '약간 진보성향', 5 => '매우 보수성향', 4 => '약한 보수성향', 3 => '중도성향'}
   }
 
   TABLE = {
@@ -56,10 +56,10 @@ class PagesController < ApplicationController
 
   def result
     choice_params = params[:answers].reject{|k,v| k == 'name'}
-    theminju_base = Math.exp(choice_params.map { |k, v| TABLE[:theminju][k.to_sym][v.to_i] }.sum + TABLE[:theminju][:intercept])
-    kookmin_base = Math.exp(choice_params.map { |k, v| TABLE[:kookmin][k.to_sym][v.to_i] }.sum + TABLE[:kookmin][:intercept])
-    etc_base = Math.exp(choice_params.map { |k, v| TABLE[:etc][k.to_sym][v.to_i] }.sum + TABLE[:etc][:intercept])
-    unknow_base = Math.exp(choice_params.map { |k, v| TABLE[:unknow][k.to_sym][v.to_i] }.sum + TABLE[:unknow][:intercept])
+    theminju_base = base(:theminju, choice_params)
+    kookmin_base = base(:kookmin, choice_params)
+    etc_base = base(:etc, choice_params)
+    unknow_base = base(:unknow, choice_params)
 
     sum_base = theminju_base + kookmin_base + etc_base + unknow_base
 
@@ -79,5 +79,15 @@ class PagesController < ApplicationController
 
   def items
     @items = ITEMS
+  end
+
+  def base(party, choice_params)
+    Math.exp(choice_params.map { |k, v| (k == 'news_paper' ? TABLE[party][k.to_sym][parse_new_paper_value(v)] : TABLE[party][k.to_sym][v.to_i]) }.sum + TABLE[party][:intercept])
+  end
+
+  def parse_new_paper_value(value)
+    return 1 if %w(1 3 5).include?(value)
+    return 2 if %w(2 4).include?(value)
+    return 3
   end
 end
