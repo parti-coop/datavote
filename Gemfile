@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.5.1'
-gem 'sqlite3'
 
 # db
 gem 'sqlite3'
@@ -48,6 +47,3 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
-
-
