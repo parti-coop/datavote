@@ -1,4 +1,21 @@
-%section
+%section#intro-section
+  .container
+    = image_tag 'intro.png', alt: '당신도 모르는 당신의 투표를 예측해 드립니다'
+
+%section#vote-section
   .container
     .action-body
       = render 'step1_body'
+
+%section#contributors-section
+  .container
+    .row
+      .col-xs-4
+        = link_to '#' do
+          = image_tag 'logo-h21.png'
+      .col-xs-4.text-center
+        = link_to '#' do
+          = image_tag 'logo-parti.png'
+      .col-xs-4.text-right
+        = link_to '#' do
+          = image_tag 'logo-choi.png'

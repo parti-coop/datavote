@@ -1,2 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+* { font-family: 'Spoqa Han Sans', 'Sans-serif'; }
+
+body {
+  background-color: #5733a3;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+}
+
+#intro-section {
+  background-color: #32007a;
+  img {
+    width: 100%;
+  }
+}
+
+#contributors-section {
+  .container {
+    text-align: justify;
+  }
+}
