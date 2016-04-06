@@ -1,0 +1,7 @@
+%p 정치이념 고르기
+
+= form_tag 'result', remote: true do
+  = hidden_field_tag :step, 6
+  = render 'question', question: :political_view
+  = submit_tag '다음', class: 'btn btn-default'
+

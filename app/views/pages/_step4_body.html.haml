@@ -1,0 +1,7 @@
+%p 신뢰신문사 고르기
+
+= form_tag 'next_step', remote: true do
+  = hidden_field_tag :step, 5
+  = render 'question', question: :news_paper
+  = submit_tag '다음', class: 'btn btn-default'
+

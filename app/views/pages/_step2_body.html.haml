@@ -1,0 +1,7 @@
+%p 대통령 고르기
+
+= form_tag 'next_step', remote: true do
+  = hidden_field_tag :step, 3
+  = render 'question', question: :present
+  = submit_tag '다음', class: 'btn btn-default'
+

@@ -1,0 +1,7 @@
+%p 이름을 넣어주세요
+
+= form_tag 'next_step', remote: true do
+  = hidden_field_tag :step, 2
+  .form-group
+    = text_field_tag 'answers[name]', '', class: 'form-control'
+  = submit_tag '다음', class: 'btn btn-default'

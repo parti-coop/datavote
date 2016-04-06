@@ -1,0 +1,3 @@
+var $step = $($.parseHTML("<%= escape_javascript(render "step#{@step}_body") %>"));
+parti_prepare_action($step);
+$('.action-body').html($step);
