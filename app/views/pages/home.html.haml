@@ -5,17 +5,17 @@
 %section#vote-section
   .container
     .action-body
-      = render 'step1_body'
+      = render 'step0_body'
 
 %section#contributors-section
   .container
     .row
       .col-xs-4
         = link_to '#' do
-          = image_tag 'logo-h21.png'
+          = image_tag 'logo-h21.png', class: 'logo-h21'
       .col-xs-4.text-center
         = link_to '#' do
-          = image_tag 'logo-parti.png'
+          = image_tag 'logo-parti.png', class: 'logo-parti'
       .col-xs-4.text-right
         = link_to '#' do
-          = image_tag 'logo-choi.png'
+          = image_tag 'logo-choi.png', class: 'logo-choi'

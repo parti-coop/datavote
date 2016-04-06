@@ -1,0 +1,4 @@
+%ul.navigation
+  - (0..7).each do |i|
+    %li{ class: (step == i ? 'active' : '') }
+      %span ●

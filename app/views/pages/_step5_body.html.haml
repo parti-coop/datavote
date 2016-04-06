@@ -1,7 +1,9 @@
-%p 총선지지정당 고르기
+= render 'navigation', step: 5
+
+%h2.number 질문 5.
+%h2 귀하는 20대 총선과 관련하여 현재 어떤 상태입니까?
 
 = form_tag 'next_step', remote: true do
   = hidden_field_tag :step, 6
   = render 'question', question: :party
-  = submit_tag '다음', class: 'btn btn-default'
-
+  = submit_tag '다음으로 >', class: 'btn-next btn-block'

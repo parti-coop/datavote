@@ -19,8 +19,147 @@ body {
   }
 }
 
+#vote-section {
+  background-image: image-url('bg-vote.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  .action-body {
+    padding: 60px 70px;
+  }
+
+  p.intro {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 100;
+    padding: 100px 0 20px;
+  }
+
+  .navigation {
+    background-image: image-url('bg-line.jpg');
+    background-position: center center;
+    background-repeat: repeat-x;
+    height: 20px;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    li {
+      color: #966fd6;
+    }
+    li.active {
+      color: #fff;
+    }
+    li {
+      position: absolute;
+      left: -1%;
+    }
+    li+li { left: 14%; }
+    li+li+li { left: 28%; }
+    li+li+li+li { left: 42%; }
+    li+li+li+li+li { left: 56%; }
+    li+li+li+li+li+li { left: 70%; }
+    li+li+li+li+li+li+li { left: 84%; }
+    li+li+li+li+li+li+li+li { left: 98%; }
+  }
+
+  h2 {
+    color: #fff;
+    font-weight: bold;
+  }
+  h2.number {
+    font-weight: 100;
+    padding-top: 20px;
+  }
+
+  form {
+    color: #fff;
+    font-size: 28px;
+    padding-top: 60px;
+    input[type=text] {
+      background: transparent;
+      border: 5px solid #fff;
+      border-radius: 0;
+      color: #fff;
+      text-align: center;
+      width: 250px;
+    }
+    label {
+      line-height: 25px;
+    }
+    input[type=radio] {
+    }
+  }
+
+  .btn-next {
+    background-color: #e26169;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600i;
+    margin-top: 60px;
+    padding: 0.5em 0;
+    &:hover {
+      background-color: #32007a;
+    }
+  }
+
+  .result {
+    background-color: #fff;
+    padding: 30px 30px 60px;
+    margin-top: 40px;
+    position: relative;
+
+    h3 {
+      color: #32007a;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    h3.thin {
+      font-weight: 100;
+    }
+    ul {
+      border: 1px solid #32007a;
+      border-bottom: none;
+      color: #32007a;
+      list-style: none;
+      margin: 30px 0;
+      padding: 0;
+      li {
+        padding: 20px;
+        border-bottom: 1px solid #32007a;
+        h3 {
+          margin: 0;
+          font-weight: 100;
+        }
+        .pull-right {
+          color: #e26169;
+          font-size: 16px;
+          line-height: 28px;
+          .percentage {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    &:after {
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      left: 0;
+      border-style: solid;
+      border-width: 100px 0 0 100px;
+      border-color: transparent transparent transparent #5733a3;
+      content: ' ';
+    }
+  }
+}
+
 #contributors-section {
+  padding: 50px 0 30px;
   .container {
+    padding: 0 70px;
     text-align: justify;
   }
 }

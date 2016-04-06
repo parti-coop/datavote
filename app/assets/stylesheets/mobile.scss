@@ -1,0 +1,62 @@
+@import 'application';
+
+#intro-section {
+  background-size: cover;
+}
+
+#vote-section {
+  .action-body {
+    padding: 30px 20px;
+  }
+  p.intro {
+    font-size: 20px;
+    padding: 50px 0 20px;
+  }
+  .btn-next {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  form {
+    font-size: 18px;
+  }
+  .result {
+    padding: 15px 15px 30px;
+    h3 {
+      font-size: 14px;
+    }
+    ul {
+      margin: 15px 0;
+      li {
+        padding: 10px;
+        .pull-right {
+          font-size: 8px;
+          .percentage {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &:after {
+      border-width: 50px 0 0 50px;
+    }
+  }
+}
+
+#contributors-section {
+  .container {
+    padding: 0 20px;
+  }
+
+  img.logo-h21 {
+    width: 55px;
+  }
+  img.logo-parti {
+    width: 45px;
+  }
+  img.logo-choi {
+    width: 35px;
+  }
+}

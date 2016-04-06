@@ -1,20 +1,48 @@
-%p 이름 #{@name}
-%ul
-  %li
-    새누리
-    = @seanuri
-  %li
-    더민주
-    = @theminju
-  %li
-    국민의당
-    = @kookmin
-  %li
-    정의당
-    = @etc
-  %li
-    투표당일 지지정당후보 결정
-    = @d_day
-  %li
-    투표확률
-    = @vote_rate
+%h2.text-center 예측 결과
+
+.result
+  %h3.thin 당신이 투표할 후보의 정당이 맞나요?
+  %h3 맞다면 공유해 보세요!
+
+  %ul
+    %li
+      .pull-right
+        지지할 확률
+        %span.percentage
+          #{number_with_precision(@seanuri*100, precision: 2)}%
+      %h3
+        %strong 새누리당
+        후보
+    %li
+      .pull-right
+        지지할 확률
+        %span.percentage
+          #{number_with_precision(@theminju*100, precision: 2)}%
+      %h3
+        %strong 더불어민주당
+        후보
+    %li
+      .pull-right
+        지지할 확률
+        %span.percentage
+          #{number_with_precision(@kookmin*100, precision: 2)}%
+      %h3
+        %strong 국민의당
+        후보
+    %li
+      .pull-right
+        지지할 확률
+        %span.percentage
+          #{number_with_precision(@etc*100, precision: 2)}%
+      %h3
+        %strong 정의당
+        후보
+    %li
+      .pull-right
+        지지할 확률
+        %span.percentage
+          #{number_with_precision(@d_day*100, precision: 2)}%
+      %h3
+        %strong 투표당일 결정
+        %br
+        %small 타정당 및 무소속 포함

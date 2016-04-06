@@ -1,7 +1,10 @@
-%p 이름을 넣어주세요
+= render 'navigation', step: 1
+
+%h2.number 질문 1.
+%h2 귀하의 이름은 어떻게 되십니까?
 
 = form_tag 'next_step', remote: true do
   = hidden_field_tag :step, 2
-  .form-group
-    = text_field_tag 'answers[name]', '', class: 'form-control'
-  = submit_tag '다음', class: 'btn btn-default'
+  .form-group.text-center
+    = text_field_tag 'answers[name]', ''
+  = submit_tag '다음으로 >', class: 'btn-next btn-block'

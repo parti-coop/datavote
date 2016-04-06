@@ -1,0 +1,17 @@
+= render 'navigation', step: 0
+
+%p.intro
+  이 설문은 사전에
+  %br
+  전국 유권자
+  %strong> 1,500명
+  에게 물어,
+  %br
+  %strong> 최적화된 6개 문항
+  만을 뽑아
+  %br
+  구성한 예측모델입니다.
+
+= form_tag 'next_step', remote: true do
+  = hidden_field_tag :step, 1
+  = submit_tag '시작하기', class: 'btn-next btn-block'

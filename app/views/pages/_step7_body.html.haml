@@ -1,7 +1,9 @@
-%p 정치이념 고르기
+= render 'navigation', step: 7
+
+%h2.number 질문 7.
+%h2 귀하의 정치적 이념성향은 어떻게 되십니까?
 
 = form_tag 'result', remote: true do
   = hidden_field_tag :step, 6
   = render 'question', question: :political_view
-  = submit_tag '다음', class: 'btn btn-default'
-
+  = submit_tag '다음으로 >', class: 'btn-next btn-block'
