@@ -148,6 +148,23 @@ body {
     h3.thin {
       font-weight: 100;
     }
+
+    .shares {
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      a {
+        display: inline-block;
+        width: 47px;
+        height: 45px;
+        overflow: hidden;
+        text-indent: -9999px;
+      }
+      .btn-twitter { background-image: image-url('btn-twitter.png'); }
+      .btn-facebook { background-image: image-url('btn-facebook.png'); }
+      .btn-kakao { background-image: image-url('btn-kakao.png'); }
+    }
+
     ul {
       border: 1px solid #32007a;
       border-bottom: none;
@@ -175,6 +192,7 @@ body {
         }
       }
     }
+
     &:after {
       position: absolute;
       z-index: 100;

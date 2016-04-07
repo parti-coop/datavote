@@ -4,46 +4,7 @@
 .result
   %h3.thin 당신이 투표할 후보의 정당이 맞나요?
   %h3 맞다면 공유해 보세요!
-
-  %ul
-    %li
-      .pull-right
-        지지할 확률
-        %span.percentage
-          #{number_with_precision(@seanuri*100, precision: 2)}%
-      %h3
-        %strong 새누리당
-        후보
-    %li
-      .pull-right
-        지지할 확률
-        %span.percentage
-          #{number_with_precision(@theminju*100, precision: 2)}%
-      %h3
-        %strong 더불어민주당
-        후보
-    %li
-      .pull-right
-        지지할 확률
-        %span.percentage
-          #{number_with_precision(@kookmin*100, precision: 2)}%
-      %h3
-        %strong 국민의당
-        후보
-    %li
-      .pull-right
-        지지할 확률
-        %span.percentage
-          #{number_with_precision(@etc*100, precision: 2)}%
-      %h3
-        %strong 정의당
-        후보
-    %li
-      .pull-right
-        지지할 확률
-        %span.percentage
-          #{number_with_precision(@d_day*100, precision: 2)}%
-      %h3
-        %strong 투표당일 결정
-        %br
-        %small 타정당 및 무소속 포함
+  .shares
+    = link_to 'twitter', '#', class: 'btn-twitter'
+    = link_to 'facebook', '#', class: 'btn-facebook'
+    = link_to 'kakao', '#', class: 'btn-kakao'

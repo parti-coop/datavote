@@ -5,6 +5,8 @@
 
 = form_tag 'result', remote: true do
   = render 'question', question: :present
-  = submit_tag '< 이전으로', class: 'btn-next btn-block', name: 'back'
-  = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: params.dig(:answers, :present).blank?, id: 'step-submit'
-
+  .row.btns
+    .col-xs-6
+      = submit_tag '< 이전으로', class: 'btn-back btn-block', name: 'back'
+    .col-xs-6
+      = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: params.dig(:answers, :age).blank?, id: 'step-submit'
