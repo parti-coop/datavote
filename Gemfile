@@ -44,6 +44,7 @@ group :development, :test do
   gem 'timecop', '~> 0.8.0'
   gem 'spring'
   gem 'mocha', '~> 1.1'
+  gem 'minitest-focus',     '~> 1.1', '>= 1.1.2'
 end
 
 group :development do

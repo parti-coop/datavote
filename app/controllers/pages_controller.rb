@@ -95,6 +95,7 @@ class PagesController < ApplicationController
   def parse_new_paper_value(value)
     return 1 if %w(1 3 5).include?(value)
     return 2 if %w(2 4).include?(value)
-    return 3
+    return 3 if value == '6'
+    return 4
   end
 end
