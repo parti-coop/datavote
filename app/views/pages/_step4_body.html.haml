@@ -1,10 +1,9 @@
-= render 'navigation', step: 4
+= render 'navigation', step: @step
 
-%h2.number 질문 4.
+%h2.number 질문 #{@step}.
 %h2 귀하 앞에, 총선기사를 실은 신문이 있다면 어느 신문을 먼저 집으시겠습니까?
 
 = form_tag 'next_step', remote: true do
-  = hidden_field_tag :step, 5
   = render 'question', question: :news_paper
   = submit_tag '다음으로 >', class: 'btn-next btn-block'
 

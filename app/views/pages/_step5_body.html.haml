@@ -1,10 +1,9 @@
-= render 'navigation', step: 5
+= render 'navigation', step: @step
 
-%h2.number 질문 5.
+%h2.number 질문 #{@step}.
 %h2 귀하는 북핵 문제를 어떻게 풀어가는 것이 좋다고 생각하십니까?
 
 = form_tag 'next_step', remote: true do
-  = hidden_field_tag :step, 6
   = render 'question', question: :north_korea
   = submit_tag '다음으로 >', class: 'btn-next btn-block'
 

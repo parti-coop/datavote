@@ -1,0 +1,9 @@
+= render 'navigation', step: @step
+
+%h2.number 질문 #{@step}.
+%h2 귀하는 우리나라 역대 대통령 중 누구를 가장 좋아하십니까?
+
+= form_tag 'result', remote: true do
+  = render 'question', question: :present
+  = submit_tag '다음으로 >', class: 'btn-next btn-block'
+

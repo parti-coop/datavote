@@ -7,7 +7,8 @@ class PagesController < ApplicationController
     news_paper: {1 => '조선일보', 2 => '한겨레신문', 3 => '중앙일보', 4 => '경향신문', 5 => '동아일보', 6 => '상황에 따라 다름', 7 => '잘 모름'},
     party: {1 => ' 예전에 지지했던 정당을 지지할 것 같다.', 2 => '예전에 지지했던 정당을 지지하지만, 후보는 보고 결정할 것 같다.', 3 => '지지하는 정당도 없고, 후보도 보고 결정하겠다.', 4 => '선거막판까지 가 봐야 알 것 같다.', 5 => '잘 모름'},
     age: {1 => '10대', 2 => '20대', 3 => '30대', 4 => '40대', 5 => '50대', 6 => '60대이상'},
-    political_view: {1 => '매우 진보성향', 2 => '약간 진보성향', 5 => '매우 보수성향', 4 => '약한 보수성향', 3 => '중도성향'}
+    political_view: {1 => '매우 진보성향', 2 => '약간 진보성향', 5 => '매우 보수성향', 4 => '약한 보수성향', 3 => '중도성향'},
+    policy: {1 => '산업정책', 2 => '고용노동정책', 3 => '외교안보정책', 4 => '복지정책', 5 => '환경정책', 6 => '가족 및 여성정책', 7 => '교육정책', 8 => '금융정책', 9 => '국민안전정책', 10 => '그 외 및 잘 모름'}
   }
 
   TABLE = {
@@ -50,12 +51,12 @@ class PagesController < ApplicationController
   }
 
   def next_step
-    @step = params[:step]
+    @step = params[:step].try(:to_i) || 0
     render 'step'
   end
 
   def result
-    choice_params = params[:answers].reject{|k,v| k == 'name'}
+    choice_params = params[:answers].reject{|k,v| k == 'name' or k == 'policy'}
     theminju_base = base(:theminju, choice_params)
     kookmin_base = base(:kookmin, choice_params)
     etc_base = base(:etc, choice_params)
