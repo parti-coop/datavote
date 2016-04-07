@@ -98,7 +98,8 @@ body {
     label {
       line-height: 30px;
     }
-    input[type=radio] {
+    input[type=radio]:checked + span {
+      color: #e26169;
     }
   }
 
