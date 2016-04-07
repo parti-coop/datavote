@@ -2,6 +2,17 @@
 
 #intro-section {
   background-size: cover;
+  a.btn-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -100px;
+    display: block;
+    width: 41px;
+    height: 41px;
+    background-image: image-url('btn-down.png');
+    background-size: cover;
+  }
 }
 
 #vote-section {

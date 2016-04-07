@@ -14,8 +14,19 @@ body {
 
 #intro-section {
   background-color: #32007a;
+  position: relative;
   img {
     width: 100%;
+  }
+  a.btn-down {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    margin-left: -200px;
+    display: block;
+    width: 82px;
+    height: 82px;
+    background-image: image-url('btn-down.png');
   }
 }
 
