@@ -66,6 +66,8 @@ body {
   h2 {
     color: #fff;
     font-weight: bold;
+    line-height: 1.5;
+    margin-top: 10px;
   }
   h2.number {
     font-weight: 100;
@@ -75,6 +77,7 @@ body {
   form {
     color: #fff;
     font-size: 28px;
+    line-height: 1.5;
     padding-top: 60px;
     input[type=text] {
       background: transparent;
@@ -85,12 +88,27 @@ body {
       width: 250px;
     }
     label {
-      line-height: 25px;
+      line-height: 30px;
     }
     input[type=radio] {
     }
   }
 
+  .btns {
+    margin-top: 60px;
+  }
+  .btn-back {
+    background-color: #8352d4;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600i;
+    padding: 0.5em 0;
+    &:hover {
+      background-color: #32007a;
+    }
+  }
   .btn-next {
     background-color: #e26169;
     border: none;
@@ -98,7 +116,6 @@ body {
     color: #fff;
     font-size: 28px;
     font-weight: 600i;
-    margin-top: 60px;
     padding: 0.5em 0;
     &:hover {
       background-color: #32007a;

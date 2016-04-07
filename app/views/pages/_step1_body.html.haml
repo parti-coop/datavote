@@ -9,4 +9,5 @@
     = hidden_field_tag "answers[#{name}]", answer
   .form-group.text-center
     = text_field_tag 'answers[name]', params.dig(:answers, :name), data: {action: "parti-enable-submit-button", 'parti-submit-button': '#step-submit'}
-  = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: params.dig(:answers, :name).blank?, id: 'step-submit'
+  .btns
+    = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: params.dig(:answers, :name).blank?, id: 'step-submit'
