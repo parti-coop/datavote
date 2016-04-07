@@ -12,6 +12,11 @@ $.is_blank = function (obj) {
   return true;
 }
 
+var parti_scroll_to_form = function() {
+  $('html, body').animate({
+    scrollTop: $('#anchor').offset().top - 50
+  }, 100);
+}
 var parti_prepare_action = function($base) {
   if($base.data('parti-action-prepared') == 'completed') {
     return;

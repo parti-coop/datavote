@@ -1,3 +1,4 @@
 var $result = $($.parseHTML("<%= escape_javascript(render "result_body") %>"));
 parti_prepare_action($result);
 $('.action-body').html($result);
+parti_scroll_to_form();
