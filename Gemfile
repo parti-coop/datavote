@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'enumerize', '~> 1.1'
 gem 'recursive-open-struct', '~> 1.0', '>= 1.0.1'
 gem 'time_difference', '~> 0.4.2'
+gem 'ruby_dig', '~> 0.0.2'
 
 # views
 gem 'sass-rails', '~> 5.0'

@@ -51,7 +51,12 @@ class PagesController < ApplicationController
   }
 
   def next_step
-    @step = params[:step].try(:to_i) || 0
+    if params[:back].present?
+      @step = params[:step].try(:to_i) - 2 || 0
+      @step = 0 if @step < 0
+    else
+      @step = params[:step].try(:to_i) || 0
+    end
     render 'step'
   end
 

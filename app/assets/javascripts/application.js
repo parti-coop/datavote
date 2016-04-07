@@ -41,7 +41,6 @@ var parti_prepare_action = function($base) {
     });
   });
 
-
   $base.data('parti-action-prepared', 'completed');
 }
 

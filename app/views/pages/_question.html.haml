@@ -1,8 +1,8 @@
 = hidden_field_tag :step, 1 + @step
-- params[:answers].each do |name, answer|
+- (params[:answers] || []).each do |name, answer|
   = hidden_field_tag "answers[#{name}]", answer
 - @items[question].each do |value, text|
   .radio
     %label
-      = radio_button_tag "answers[#{question}]", value, false, data: {action: "parti-enable-submit-button", 'parti-submit-button': '#step-submit'}
+      = radio_button_tag "answers[#{question}]", value, (value == params[:answers][question.to_sym].to_i), data: {action: "parti-enable-submit-button", 'parti-submit-button': '#step-submit'}
       = text
