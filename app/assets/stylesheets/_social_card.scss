@@ -8,7 +8,7 @@
     color: #fff;
     float: left;
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 300;
     .name {
       color: #f0646d;
     }
@@ -34,7 +34,8 @@
   h3 {
     margin: 0;
     color: #32007a;
-    font-size: 28px;
+    font-size: 20px;
+    font-weight: 300;
     letter-spacing: -2px;
     line-height: 1.0;
     small {
@@ -43,11 +44,11 @@
   }
   .pull-right {
     color: #f0646d;
-    line-height: 26px;
+    line-height: 18px;
     vertical-align: top;
     .percentage {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 20px;
+      font-weight: 300;
     }
   }
 }

@@ -63,7 +63,7 @@ class PagesController < ApplicationController
   def result
     cal
     @file_name = "#{SecureRandom.hex(20)}.png"
-    IMGKit.new(render_to_string('social_card', layout: nil, format: :html), width: 1200, height: 630, quality: 10).to_file(File.join(Rails.root, 'public', 'social_cards', @file_name))
+    IMGKit.new(render_to_string('social_card', layout: nil, format: :html), width: 615, height: 336, quality: 50).to_file(File.join(Rails.root, 'public', 'social_cards', @file_name))
     respond_to do |format|
       format.js
     end
