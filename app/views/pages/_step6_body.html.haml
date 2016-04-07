@@ -5,6 +5,6 @@
 
 = form_tag 'next_step', remote: true do
   = render 'question', question: :policy
-  = submit_tag '다음으로 >', class: 'btn-next btn-block'
+  = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: true, id: 'step-submit'
 
 

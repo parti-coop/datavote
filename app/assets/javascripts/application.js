@@ -3,6 +3,15 @@
 //= require bootstrap
 //= require_tree .
 
+// blank
+$.is_blank = function (obj) {
+  if (!obj || $.trim(obj) === "") return true;
+  if (obj.length && obj.length > 0) return false;
+
+  for (var prop in obj) if (obj[prop]) return false;
+  return true;
+}
+
 var parti_prepare_action = function($base) {
   if($base.data('parti-action-prepared') == 'completed') {
     return;
@@ -14,14 +23,20 @@ var parti_prepare_action = function($base) {
     });
   }
 
-  parti_apply('input:checkbox[data-action="parti-check-only-one"]', function(elm) {
-    $(elm).click(function() {
-      if ($(this).is(":checked")) {
-        var group = "input:checkbox[name='" + $(this).attr("name") + "']";
-        $(group).prop("checked", false);
-        $(this).prop("checked", true);
+  parti_apply('input:radio[data-action="parti-enable-submit-button"]', function(elm) {
+    $(elm).on('click', function() {
+      var $submit_button = $($(elm).data('parti-submit-button'));
+      $submit_button.prop('disabled', false);
+    });
+  });
+
+  parti_apply('input:text[data-action="parti-enable-submit-button"]', function(elm) {
+    $(elm).on('keydown', function() {
+      var $submit_button = $($(elm).data('parti-submit-button'));
+      if($.is_blank($(elm).val())) {
+        $submit_button.prop('disabled', true);
       } else {
-        $(this).prop("checked", false);
+        $submit_button.prop('disabled', false);
       }
     });
   });

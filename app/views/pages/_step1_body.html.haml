@@ -6,5 +6,5 @@
 = form_tag 'next_step', remote: true do
   = hidden_field_tag :step, 2
   .form-group.text-center
-    = text_field_tag 'answers[name]', ''
-  = submit_tag '다음으로 >', class: 'btn-next btn-block'
+    = text_field_tag 'answers[name]', '', data: {action: "parti-enable-submit-button", 'parti-submit-button': '#step-submit'}
+  = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: true, id: 'step-submit'

@@ -4,5 +4,5 @@
 - @items[question].each do |value, text|
   .radio
     %label
-      = radio_button_tag "answers[#{question}]", value, false, data: {action: "parti-check-only-one"}
+      = radio_button_tag "answers[#{question}]", value, false, data: {action: "parti-enable-submit-button", 'parti-submit-button': '#step-submit'}
       = text
