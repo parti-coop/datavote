@@ -1,0 +1,212 @@
+* { font-family: 'Spoqa Han Sans', 'Sans-serif'; }
+
+body {
+  background-color: #5733a3;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+}
+
+#intro-section {
+  background-color: #32007a;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  a.btn-down {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    margin-left: -200px;
+    display: block;
+    width: 82px;
+    height: 82px;
+    background-image: image-url('btn-down.png');
+  }
+}
+
+#vote-section {
+  background-image: image-url('bg-vote.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  .action-body {
+    padding: 60px 70px;
+  }
+
+  p.intro {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 100;
+    padding: 100px 0 20px;
+  }
+
+  .navigation {
+    background-image: image-url('bg-line.jpg');
+    background-position: center center;
+    background-repeat: repeat-x;
+    height: 20px;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    li {
+      color: #966fd6;
+    }
+    li.active {
+      color: #fff;
+    }
+    li {
+      position: absolute;
+      left: -1%;
+    }
+    li+li { left: 12%; }
+    li+li+li { left: 24%; }
+    li+li+li+li { left: 36%; }
+    li+li+li+li+li { left: 48%; }
+    li+li+li+li+li+li { left: 60%; }
+    li+li+li+li+li+li+li { left: 72%; }
+    li+li+li+li+li+li+li+li { left: 85%; }
+    li+li+li+li+li+li+li+li+li { left: 98%; }
+  }
+
+  h2 {
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  h2.number {
+    font-weight: 100;
+    padding-top: 20px;
+  }
+
+  form {
+    color: #fff;
+    font-size: 28px;
+    line-height: 1.5;
+    padding-top: 60px;
+    input[type=text] {
+      background: transparent;
+      border: 5px solid #fff;
+      border-radius: 0;
+      color: #fff;
+      text-align: center;
+      width: 250px;
+    }
+    label {
+      line-height: 30px;
+    }
+    input[type=radio] {
+    }
+  }
+
+  .btns {
+    margin-top: 60px;
+  }
+  .btn-back {
+    background-color: #8352d4;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600i;
+    padding: 0.5em 0;
+    &:hover {
+      background-color: #32007a;
+    }
+  }
+  .btn-next {
+    background-color: #e26169;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600i;
+    padding: 0.5em 0;
+    &:hover {
+      background-color: #32007a;
+    }
+  }
+
+  .result {
+    background-color: #fff;
+    padding: 30px 30px 60px;
+    margin-top: 40px;
+    position: relative;
+
+    h3 {
+      color: #32007a;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    h3.thin {
+      font-weight: 100;
+    }
+
+    .shares {
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      a {
+        display: inline-block;
+        width: 47px;
+        height: 45px;
+        overflow: hidden;
+        text-indent: -9999px;
+      }
+      .btn-twitter { background-image: image-url('btn-twitter.png'); }
+      .btn-facebook { background-image: image-url('btn-facebook.png'); }
+      .btn-kakao { background-image: image-url('btn-kakao.png'); }
+    }
+
+    ul {
+      border: 1px solid #32007a;
+      border-bottom: none;
+      color: #32007a;
+      list-style: none;
+      margin: 30px 0;
+      padding: 0;
+      li {
+        padding: 20px;
+        border-bottom: 1px solid #32007a;
+        h3 {
+          margin: 0;
+          font-weight: 100;
+        }
+        small {
+          color: #32007a;
+        }
+        .pull-right {
+          color: #e26169;
+          font-size: 16px;
+          line-height: 28px;
+          .percentage {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    &:after {
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      left: 0;
+      border-style: solid;
+      border-width: 100px 0 0 100px;
+      border-color: transparent transparent transparent #5733a3;
+      content: ' ';
+    }
+  }
+}
+
+#contributors-section {
+  padding: 50px 0 30px;
+  .container {
+    padding: 0 70px;
+    text-align: justify;
+  }
+}

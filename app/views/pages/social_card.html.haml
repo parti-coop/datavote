@@ -1,0 +1,70 @@
+!!!
+%html
+  %head
+    %link{:href => "//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css", :rel => "stylesheet", :type => "text/css"}
+    = stylesheet_link_tag 'application', media: 'all'
+    :css
+      body {
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+  %body
+    .social-card
+      .intro
+        %span.thin
+          데이터가
+          %br
+          예측한
+        %br
+        %span.name> 삼달리
+        님이
+        %br
+        투표할
+        %br
+        후보의
+        %br
+        정당은?
+
+      %ul
+        %li
+          .pull-right
+            지지할 확률
+            %span.percentage
+              #{number_with_precision(0.003*100, precision: 2)}%
+          %h3
+            %strong 새누리당
+            후보
+        %li
+          .pull-right
+            지지할 확률
+            %span.percentage
+              #{number_with_precision(0.003*100, precision: 2)}%
+          %h3
+            %strong 더불어민주당
+            후보
+        %li
+          .pull-right
+            지지할 확률
+            %span.percentage
+              #{number_with_precision(0.003*100, precision: 2)}%
+          %h3
+            %strong 국민의당
+            후보
+        %li
+          .pull-right
+            지지할 확률
+            %span.percentage
+              #{number_with_precision(0.003*100, precision: 2)}%
+          %h3
+            %strong 정의당
+            후보
+        %li
+          .pull-right
+            지지할 확률
+            %span.percentage
+              #{number_with_precision(0.003*100, precision: 2)}%
+          %h3
+            %strong 투표당일 결정
+            %br
+            %small 타정당 및 무소속 포함

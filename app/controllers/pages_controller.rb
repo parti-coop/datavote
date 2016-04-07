@@ -79,6 +79,7 @@ class PagesController < ApplicationController
   end
 
   def social_card
+    render layout: nil
   end
 
   private
