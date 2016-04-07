@@ -1,13 +1,10 @@
 = render 'navigation', step: @step
 
 %h2.number 질문 #{@step}.
-%h2 귀하의 이름은 어떻게 되십니까?
+%h2 귀하의 연령은 어떻게 되십니까?
 
 = form_tag 'next_step', remote: true do
-  = hidden_field_tag :step, 2
-  - (params[:answers] || []).each do |name, answer|
-    = hidden_field_tag "answers[#{name}]", answer
-  .form-group.text-center
-    = text_field_tag 'answers[name]', params.dig(:answers, :name), data: {action: "parti-enable-submit-button", 'parti-submit-button': '#step-submit'}
-  .btns
-    = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: params.dig(:answers, :name).blank?, id: 'step-submit'
+  = render 'question', question: :age
+  .row.btns
+    .col-xs-12
+      = submit_tag '다음으로 >', class: 'btn-next btn-block', disabled: params.dig(:answers, :age).blank?, id: 'step-submit'

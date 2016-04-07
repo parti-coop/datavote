@@ -1,10 +1,10 @@
 = render 'navigation', step: @step
 
 %h2.number 질문 #{@step}.
-%h2 귀하 앞에, 총선기사를 실은 신문이 있다면 어느 신문을 먼저 집으시겠습니까?
+%h2 귀하는 북핵 문제를 어떻게 풀어가는 것이 좋다고 생각하십니까?
 
 = form_tag 'next_step', remote: true do
-  = render 'question', question: :news_paper
+  = render 'question', question: :north_korea
   .row.btns
     .col-xs-6
       = submit_tag '< 이전으로', class: 'btn-back btn-block', name: 'back'

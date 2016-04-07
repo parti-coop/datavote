@@ -5,10 +5,9 @@
   %h3.thin 당신이 투표할 후보의 정당이 맞나요?
   %h3 맞다면 공유해 보세요!
   .shares
-    = link_to 'twitter', '#', class: 'btn-twitter'
-    = link_to 'facebook', '#', class: 'btn-facebook'
-    = link_to 'kakao', '#', class: 'btn-kakao'
-
+    = link_to 'twitter', "https://twitter.com/intent/tweet?#{{url: "http://datavote.kr/socail_cards/#{@file_name}", text: '당신도 모르는 당신의 투표를 예측해 드립니다 http://datavote.kr'}.to_query}", class: 'btn-twitter', target: '_blank'
+    = link_to 'facebook', "https://www.facebook.com/dialog/feed?#{{app_id: 1570267049950803, display: 'popup', caption: '당신도 모르는 당신의 투표를 예측해 드립니다', redirect_uri: 'http://datavote.kr', link: 'http://datavote.kr', picture: "http://datavote.kr/socail_cards/#{@file_name}"}.to_query}", class: 'btn-facebook', target: '_blank'
+    = link_to 'kakao', "https://story.kakao.com/share?#{{url: 'http://datavote.kr'}.to_query}", class: 'btn-kakao', target: '_blank'
   %ul
     %li
       .pull-right
@@ -51,3 +50,9 @@
         %strong 투표당일 결정
         %br
         %small 타정당 및 무소속 포함
+    %li
+      .pull-right
+        %span.percentage
+          #{@vote_rate}%
+      %h3
+        %strong 당신이 투표할 확률

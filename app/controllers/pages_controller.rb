@@ -61,6 +61,21 @@ class PagesController < ApplicationController
   end
 
   def result
+    cal
+    @file_name = "#{SecureRandom.hex(20)}.png"
+    IMGKit.new(render_to_string('social_card', layout: nil, format: :html), width: 1200, height: 630, quality: 10).to_file(File.join(Rails.root, 'public', 'social_cards', @file_name))
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def social_card
+    render layout: nil
+  end
+
+  private
+
+  def cal
     choice_params = params[:answers].reject{|k,v| k == 'name' or k == 'policy'}
     theminju_base = base(:theminju, choice_params)
     kookmin_base = base(:kookmin, choice_params)
@@ -69,7 +84,6 @@ class PagesController < ApplicationController
 
     sum_base = theminju_base + kookmin_base + etc_base + unknow_base
 
-    @name = params[:answers][:name]
     @seanuri = 1/(1+sum_base)
     @theminju = theminju_base/(1+sum_base)
     @kookmin = kookmin_base/(1+sum_base)
@@ -77,12 +91,6 @@ class PagesController < ApplicationController
     @d_day = unknow_base/(1+sum_base)
     @vote_rate =rand(55...87)
   end
-
-  def social_card
-    render layout: nil
-  end
-
-  private
 
   def items
     @items = ITEMS

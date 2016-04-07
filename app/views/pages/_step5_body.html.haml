@@ -1,10 +1,10 @@
 = render 'navigation', step: @step
 
 %h2.number 질문 #{@step}.
-%h2 귀하는 북핵 문제를 어떻게 풀어가는 것이 좋다고 생각하십니까?
+%h2 귀하는 한국사회가 가장 관심을 가져야 하는 정책분야는 무엇이라고 보십니까?
 
 = form_tag 'next_step', remote: true do
-  = render 'question', question: :north_korea
+  = render 'question', question: :policy
   .row.btns
     .col-xs-6
       = submit_tag '< 이전으로', class: 'btn-back btn-block', name: 'back'

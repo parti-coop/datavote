@@ -1,8 +1,9 @@
 !!!
-%html
+%html{:lang => I18n.locale}
   %head
+    %meta{:charset => "utf-8"}
     %link{:href => "//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css", :rel => "stylesheet", :type => "text/css"}
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag asset_data_base64('application.css'), media: 'all'
     :css
       body {
         background: none;
@@ -10,28 +11,27 @@
         margin: 0;
       }
   %body
-    .social-card
+    .social-card{ style: "background-image: url(#{asset_data_base64('bg-social-card.png')});" }
       .intro
         %span.thin
-          데이터가
+          당신도
           %br
-          예측한
+          모르는
         %br
-        %span.name> 삼달리
-        님이
+        %span.name 당신의
         %br
-        투표할
+        %span.name> 투표
+        를
         %br
-        후보의
+        예측한
         %br
-        정당은?
-
+        결과
       %ul
         %li
           .pull-right
             지지할 확률
             %span.percentage
-              #{number_with_precision(0.003*100, precision: 2)}%
+              #{number_with_precision(@seanuri*100, precision: 2)}%
           %h3
             %strong 새누리당
             후보
@@ -39,7 +39,7 @@
           .pull-right
             지지할 확률
             %span.percentage
-              #{number_with_precision(0.003*100, precision: 2)}%
+              #{number_with_precision(@theminju*100, precision: 2)}%
           %h3
             %strong 더불어민주당
             후보
@@ -47,7 +47,7 @@
           .pull-right
             지지할 확률
             %span.percentage
-              #{number_with_precision(0.003*100, precision: 2)}%
+              #{number_with_precision(@kookmin*100, precision: 2)}%
           %h3
             %strong 국민의당
             후보
@@ -55,7 +55,7 @@
           .pull-right
             지지할 확률
             %span.percentage
-              #{number_with_precision(0.003*100, precision: 2)}%
+              #{number_with_precision(@etc*100, precision: 2)}%
           %h3
             %strong 정의당
             후보
@@ -63,8 +63,14 @@
           .pull-right
             지지할 확률
             %span.percentage
-              #{number_with_precision(0.003*100, precision: 2)}%
+              #{number_with_precision(@d_day*100, precision: 2)}%
           %h3
             %strong 투표당일 결정
             %br
             %small 타정당 및 무소속 포함
+        %li
+          .pull-right
+            %span.percentage
+              #{@vote_rate}%
+          %h3
+            %strong 당신이 투표할 확률

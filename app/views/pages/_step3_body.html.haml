@@ -1,10 +1,10 @@
 = render 'navigation', step: @step
 
 %h2.number 질문 #{@step}.
-%h2 귀하의 정치적 이념성향은 어떻게 되십니까?
+%h2 귀하 앞에, 총선기사를 실은 신문이 있다면 어느 신문을 먼저 집으시겠습니까?
 
 = form_tag 'next_step', remote: true do
-  = render 'question', question: :political_view
+  = render 'question', question: :news_paper
   .row.btns
     .col-xs-6
       = submit_tag '< 이전으로', class: 'btn-back btn-block', name: 'back'
